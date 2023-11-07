@@ -30,7 +30,7 @@ const AddSection = () => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    console.log('clic submit')
+    console.log("clic submit");
 
     const { name } = inputs;
 
@@ -57,15 +57,14 @@ const AddSection = () => {
 
   return (
     <form className={styles.container} onSubmit={handleSubmit}>
-      <h4>Add new box</h4>
       <TextField
         value={inputs.name}
         id="filled-basic"
-        label="box name"
+        label="Add new box"
         variant="filled"
         onChange={handleChange}
         name="name"
-      /> 
+      />
 
       <Button type="submit" variant="contained">
         Add box

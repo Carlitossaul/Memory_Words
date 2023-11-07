@@ -20,16 +20,18 @@ const Sections = () => {
   // <Link to={`/user/${id}/section/${sec._id}`}>{sec.name}</Link>
   return (
     <div className={styles.container}>
-      <h2>Boxs</h2>
-      {section &&
-        section.map((sec) => (
-          <div className={styles.boxs} key={sec.id}>
-            <Link to={`/words/${sec.name}`} className={styles.box}>
-              {sec.name}
-            </Link>
-          </div>
-        ))}
-      <AddSection />
+      <div className={styles.containerTitle}>
+        <h2>Boxs</h2>
+        <AddSection />
+      </div>
+      <div className={styles.boxs}>
+        {section &&
+          section.map((sec) => (
+            <div className={styles.box} key={sec.id}>
+              <Link to={`/words/${sec.name}`}>{sec.name}</Link>
+            </div>
+          ))}
+      </div>
     </div>
   );
 };
