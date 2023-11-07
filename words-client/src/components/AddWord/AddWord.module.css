@@ -1,0 +1,11 @@
+.container {
+  display: flex;
+  width: auto;
+  align-items: center;
+  gap: 10px;
+  text-transform: uppercase;
+}
+
+.select {
+  min-width: 6em;
+}

@@ -1,0 +1,26 @@
+:root {
+  --black: #121112;
+  --blue: #058eea;
+  --white: #ffffff;
+  --gray: #888888;
+  --grayLight: #ccc;
+  --green: #4bc670;
+}
+
+body {
+  margin: 0;
+  background-color: var(--grayLight);
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+span,
+a {
+  color: var(--black);
+}
