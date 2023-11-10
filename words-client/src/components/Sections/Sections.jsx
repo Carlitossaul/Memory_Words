@@ -2,7 +2,7 @@ import { Link } from "react-router-dom";
 import styles from "./Sections.module.css";
 import { useDispatch, useSelector } from "react-redux";
 import AddSection from "../AddSection/AddSection";
-import { useEffect, useState } from "react";
+import { useEffect } from "react";
 import { getSections } from "../../redux/actions";
 
 const Sections = () => {

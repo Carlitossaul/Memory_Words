@@ -84,6 +84,7 @@ const Words = () => {
         <h3>Words for {box}</h3>
         <AddWord />
       </div>
+      <h3>Total words {selectedSection.Words.length}</h3>
       <div className={styles.containerBox}>
         <ul>
           {selectedSection &&

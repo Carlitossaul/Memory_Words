@@ -4,7 +4,7 @@ import styles from "./AddSection.module.css";
 import TextField from "@mui/material/TextField";
 import Button from "@mui/material/Button";
 import axios from "axios";
-import { sectionUpdate } from "../../redux/actions";
+import { sectionUpdate, get300 } from "../../redux/actions";
 
 const AddSection = () => {
   const [idUser, setIdUser] = useState("");
@@ -55,6 +55,11 @@ const AddSection = () => {
     // });
   };
 
+  const dataBulk = {
+    idUser: idUser,
+    nameSeccion: "300-Words",
+  };
+
   return (
     <form className={styles.container} onSubmit={handleSubmit}>
       <TextField
@@ -69,6 +74,9 @@ const AddSection = () => {
       <Button type="submit" variant="contained">
         Add box
       </Button>
+      <button type="button" onClick={() => dispatch(get300(dataBulk))}>
+        Get 300 words
+      </button>
     </form>
   );
 };

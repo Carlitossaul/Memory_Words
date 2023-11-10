@@ -3,6 +3,7 @@ const { Router } = require("express");
 const { postUser, loginUser } = require("../handlers/handleUser");
 const { postSeccion, getSeccions } = require("../handlers/handleSeccion");
 const { postWord, updateWord, deleteWord } = require("../handlers/handleWord");
+const { bulkCreate } = require("../handlers/handleBulk");
 
 const router = Router();
 
@@ -19,5 +20,7 @@ router.post("/words", postWord);
 router.delete("/words/:id", deleteWord);
 router.put("/words", updateWord);
 
+//bulk
+router.post("/bulk", bulkCreate);
 
 module.exports = router;
