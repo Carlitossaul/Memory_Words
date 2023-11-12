@@ -4,6 +4,7 @@ import {
   LOGOUT,
   UPDATE_SECTION,
   DELETE_WORD,
+  GET300,
 } from "./actions";
 
 const initialState = {
@@ -45,6 +46,11 @@ const rootReducer = (state = initialState, { type, payload }) => {
         sections: updatedSections,
       };
     case LOGOUT:
+      return {
+        ...state,
+        sections: payload,
+      };
+    case GET300:
       return {
         ...state,
         sections: payload,

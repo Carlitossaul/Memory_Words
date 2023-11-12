@@ -11,7 +11,6 @@ const bulkCreate = async (req, res) => {
     });
 
     if (existing) {
-      // console.log(existing);
       return res.status(406).json({ message: "Section existing" });
     }
 

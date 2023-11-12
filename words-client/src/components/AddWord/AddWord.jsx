@@ -18,9 +18,7 @@ const AddWord = () => {
   const sections = useSelector((state) => state.sections);
 
   const selectSeccion = sections.find((sec) => sec.name === box);
-  console.log(selectSeccion);
   const { id } = selectSeccion;
-  console.log(id);
 
   useEffect(() => {
     const id = JSON.parse(localStorage.getItem("idUser"));
