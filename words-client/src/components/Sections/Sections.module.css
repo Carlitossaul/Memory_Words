@@ -25,6 +25,17 @@
   /* background-color: #252525; */
   padding-top: 2em;
 }
+
+.box {
+  height: 6em;
+  width: 10em;
+  background-color: aqua;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 5px;
+}
+
 .boxs a {
   text-decoration: none;
   color: #000;

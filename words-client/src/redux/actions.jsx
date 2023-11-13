@@ -4,6 +4,7 @@ export const LOGIN = "LOGIN";
 export const GET_SECTIONS = "GET_SECTIONS";
 export const UPDATE_SECTION = "UPDATE_SECTION";
 export const DELETE_WORD = "DELETE_WORD";
+export const DELETE_SECCION = "DELETE_SECCION";
 export const LOGOUT = "LOGOUT";
 export const GET300 = "GET300";
 
@@ -54,3 +55,10 @@ export const deleteWordAction = (wordId) => ({
   type: DELETE_WORD,
   payload: wordId,
 });
+
+export const deleteSeccion = (id) => {
+  return {
+    type: DELETE_SECCION,
+    payload: id,
+  };
+};

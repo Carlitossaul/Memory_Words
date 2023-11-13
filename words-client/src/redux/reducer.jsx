@@ -5,6 +5,7 @@ import {
   UPDATE_SECTION,
   DELETE_WORD,
   GET300,
+  DELETE_SECCION,
 } from "./actions";
 
 const initialState = {
@@ -33,6 +34,12 @@ const rootReducer = (state = initialState, { type, payload }) => {
       return {
         ...state,
         sections: payload,
+      };
+    case DELETE_SECCION:
+      const filtered = state.sections.filter((sec) => sec.id !== payload);
+      return {
+        ...state,
+        sections: filtered,
       };
     case DELETE_WORD:
       const wordId = payload;
