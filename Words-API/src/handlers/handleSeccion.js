@@ -2,6 +2,19 @@ const { Seccion } = require("../db.js");
 const { User } = require("../db.js");
 const { Word } = require("../db.js");
 
+//controllers
+const deleteSeccion = require("../controllers/seccion_controllers/deleteSeccion.js");
+
+const deleteSeccionHandler = async (req, res) => {
+  const { id } = req.params;
+  try {
+    const response = await deleteSeccion(id);
+    return res.status(200).json(response);
+  } catch (error) {
+    return res.status(500).json(error);
+  }
+};
+
 const postSeccion = async (req, res) => {
   const { name, idUser } = req.body;
   console.log(name, idUser);
@@ -54,4 +67,4 @@ const getSeccions = async (req, res) => {
   }
 };
 
-module.exports = { postSeccion, getSeccions };
+module.exports = { deleteSeccionHandler, postSeccion, getSeccions };
