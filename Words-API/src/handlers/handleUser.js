@@ -1,39 +1,30 @@
 const { User } = require("../db.js");
 
-const postUser = async (req, res) => {
+// constrollers
+const postUser = require("../controllers/user_controllers/postUser.js");
+const loginUser = require("../controllers/user_controllers/loginUser.js");
+
+const postUserHandler = async (req, res) => {
   const { email, password } = req.body;
 
   try {
-    const [user, created] = await User.findOrCreate({
-      where: { email, password },
-    });
-
-    return res.status(200).json({ message: "User created successfully!" });
+    const response = await postUser(email, password);
+    return res.status(200).json(response);
   } catch (error) {
     return res.status(500).json({ message: error.message });
   }
 };
 
-const loginUser = async (req, res) => {
-  // el login del usuario va a retornar un objeto con un true y su idUSer para poder crear seccions
+const loginUserHandler = async (req, res) => {
   const { email, password } = req.body;
-  console.log(email, password);
-  try {
-    const user = await User.findOne({
-      where: { email: email },
-    });
 
-    if (!user) {
-      return res.status(404).json({ message: "Usuario no encontrado." });
-    }
-    if (user.password === password) {
-      return res.status(200).json({ access: true, id: user.id });
-    } else {
-      return res.status(403).json({ message: "Contraseña incorrecta." });
-    }
+  try {
+    const response = await loginUser(email, password);
+
+    return res.status(200).json(response);
   } catch (error) {
-    return res.status(500).json({ message: error.message });
+    return error;
   }
 };
 
-module.exports = { postUser, loginUser };
+module.exports = { postUserHandler, loginUserHandler };

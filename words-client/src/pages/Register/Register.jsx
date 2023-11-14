@@ -24,8 +24,8 @@ const Register = () => {
     if (user.email && user.password) {
       axios
         .post("/user", user)
-        .then((response) => window.alert(response.data.message))
-        .catch((response) => window.alert(response.data.message));
+        .then((response) => console.log(response.data))
+        .catch((response) => console.log(response.data));
       // setUser({
       //   email: "",
       //   password: "",

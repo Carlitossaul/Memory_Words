@@ -37,8 +37,6 @@ const postWord = async (
 
     await seccion.addWord(newWord);
 
-    //tengo que retornar el mensaje pero tambien la lista actualizada de palabras
-
     const sections = await Seccion.findAll({
       where: { UserId: idUser },
       include: [{ model: Word }],
@@ -46,7 +44,7 @@ const postWord = async (
 
     return sections;
   } catch (error) {
-    return res.status(500).json({ message: error.message });
+    return error;
   }
 };
 
