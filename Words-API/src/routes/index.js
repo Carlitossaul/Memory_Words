@@ -1,7 +1,8 @@
 const { Router } = require("express");
+const router = Router();
 
-const { postSeccion, getSeccions } = require("../handlers/handleSeccion");
-const { bulkCreate } = require("../handlers/handleBulk");
+//handler bulk
+const { bulkCreateHandler } = require("../handlers/handleBulk");
 
 // handlers words
 const {
@@ -11,20 +12,22 @@ const {
 } = require("../handlers/handleWord");
 
 //handlers sections
-const { deleteSeccionHandler } = require("../handlers/handleSeccion");
+const {
+  deleteSeccionHandler,
+  postSeccionHandler,
+  getSeccionsHandler,
+} = require("../handlers/handleSeccion");
 
 //handlers user
 const { loginUserHandler, postUserHandler } = require("../handlers/handleUser");
-
-const router = Router();
 
 //user
 router.post("/login", loginUserHandler);
 router.post("/user", postUserHandler);
 
 //seccions
-router.post("/seccion", postSeccion);
-router.get("/seccion", getSeccions);
+router.post("/seccion", postSeccionHandler);
+router.get("/seccion", getSeccionsHandler);
 router.delete("/seccion/:id", deleteSeccionHandler);
 
 //words
@@ -33,6 +36,6 @@ router.delete("/words/:id", deleteWordHandler);
 router.put("/words", updateColorWordHandler);
 
 //bulk
-router.post("/bulk", bulkCreate);
+router.post("/bulk", bulkCreateHandler);
 
 module.exports = router;
