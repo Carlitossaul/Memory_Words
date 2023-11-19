@@ -43,32 +43,6 @@ const Login = () => {
     }
   };
 
-  // const handleSubmit = (e) => {
-  //   e.preventDefault();
-  //   if (user.email && user.password) {
-  //     axios
-  //       .post("/user/login", user)
-  //       // .then((response) => dispatch(login(response.data)))
-  //       .then(({ data }) => {
-  //         if (data) {
-  //           const { access, id } = data;
-  //           console.log(access, id);
-  //           id && dispatch(getSections(id));
-  //           access && dispatch(login(data));
-  //           // access && dispatch(login(access));
-  //           // id && dispatch(idUser(id));
-  //           navigate("/home");
-  //         }
-  //       })
-  //       .catch((response) => console.log(response));
-  //     setUser({
-  //       email: "",
-  //       password: "",
-  //     });
-  //     // navigate("/home");
-  //   }
-  // };
-
   return (
     <form onSubmit={handleSubmit} className={styles.container}>
       <h1>Login</h1>

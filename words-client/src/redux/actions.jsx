@@ -42,10 +42,12 @@ export const get300 = (inputs) => async (dispatch) => {
   try {
     const res = await axios.post("http://localhost:3001/bulk", inputs);
     const { sections } = res.data;
-    dispatch({
-      type: GET300,
-      payload: sections,
-    });
+    if (sections) {
+      dispatch({
+        type: GET300,
+        payload: sections,
+      });
+    }
   } catch (error) {
     console.log(error);
   }

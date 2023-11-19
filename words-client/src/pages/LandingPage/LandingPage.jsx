@@ -6,8 +6,13 @@ import Login from "../Login/Login";
 const LandingPage = () => {
   return (
     <div className={styles.container}>
-      <h1>Welcome to Memory words</h1>
-      <Login />
+      <div className={styles.loginContainer}>
+        <div>
+          {" "}
+          <h1>Welcome to Flash-Cards</h1>
+        </div>
+        <Login />
+      </div>
     </div>
   );
 };

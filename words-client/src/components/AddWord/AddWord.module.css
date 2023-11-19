@@ -1,6 +1,6 @@
 .container {
   display: flex;
-  width: auto;
+  width: 100%;
   align-items: center;
   gap: 10px;
   text-transform: uppercase;

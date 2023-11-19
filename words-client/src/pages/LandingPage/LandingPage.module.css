@@ -4,9 +4,15 @@
   align-items: center;
   justify-content: center;
   text-align: center;
-  text-transform: uppercase;
 }
 
 .container h1 {
   padding-top: 2em;
+}
+
+.loginContainer {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  width: 100%;
 }
