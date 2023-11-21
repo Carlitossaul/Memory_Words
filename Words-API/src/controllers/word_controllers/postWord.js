@@ -42,7 +42,7 @@ const postWord = async (
       include: [{ model: Word }],
     });
 
-    return sections;
+    return { data: sections, message: "word add successfully" };
   } catch (error) {
     return error;
   }

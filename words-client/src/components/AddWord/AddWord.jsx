@@ -64,7 +64,7 @@ const AddWord = () => {
           }
         })
         .catch(({ data }) => {
-          console.log(data);
+          toast.error(data.message);
         });
       // }
       // setInputs({
