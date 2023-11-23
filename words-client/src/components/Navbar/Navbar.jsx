@@ -1,15 +1,18 @@
+//dependencies
 import * as React from "react";
 import Breadcrumbs from "@mui/material/Breadcrumbs";
-import styles from "./Navbar.module.css";
-// import Link from "@mui/material/Link";
 import { Link } from "react-router-dom";
 import { useLocation } from "react-router-dom";
 import { useDispatch } from "react-redux";
+
+//functions
 import { logOut } from "../../redux/actions";
+
+//styles
+import styles from "./Navbar.module.css";
 
 function handleClick(event) {
   event.preventDefault();
-  console.info("You clicked a breadcrumb.");
 }
 
 export default function ActiveLastBreadcrumb() {

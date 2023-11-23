@@ -1,16 +1,20 @@
+//dependencies
 import React, { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
-import styles from "./AddSection.module.css";
 import TextField from "@mui/material/TextField";
 import Button from "@mui/material/Button";
 import axios from "axios";
+
+//styles
+import styles from "./AddSection.module.css";
+
+//functions
 import { sectionUpdate, get300 } from "../../redux/actions";
 
 const AddSection = () => {
   const [idUser, setIdUser] = useState("");
   const dispatch = useDispatch();
 
-  // const idUser = useSelector((state) => state.idUser);
   useEffect(() => {
     const id = JSON.parse(localStorage.getItem("idUser"));
     if (id) {
@@ -30,7 +34,6 @@ const AddSection = () => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    console.log("clic submit");
 
     const { name } = inputs;
 

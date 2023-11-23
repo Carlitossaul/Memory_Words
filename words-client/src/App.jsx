@@ -1,8 +1,11 @@
+//styles
 import styles from "./App.module.css";
-import { Routes, Route } from "react-router-dom";
-import axios from "axios";
+
+//dependencies
 // axios.defaults.baseURL = "https://words-api-dev-btjj.2.ie-1.fl0.io/";
 axios.defaults.baseURL = "http://localhost:3001/";
+import { Routes, Route } from "react-router-dom";
+import axios from "axios";
 
 // components
 import ActiveLastBreadcrumb from "./components/Navbar/Navbar";

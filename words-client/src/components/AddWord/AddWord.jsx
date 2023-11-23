@@ -1,15 +1,20 @@
+//dependencies
 import React, { useState, useEffect } from "react";
 import { useParams } from "react-router-dom";
 import TextField from "@mui/material/TextField";
 import Button from "@mui/material/Button";
 import axios from "axios";
-import { sectionUpdate } from "../../redux/actions";
 import { useDispatch, useSelector } from "react-redux";
 import InputLabel from "@mui/material/InputLabel";
 import MenuItem from "@mui/material/MenuItem";
 import Select from "@mui/material/Select";
-import styles from "./AddWord.module.css";
 import toast from "react-hot-toast";
+
+//styles
+import styles from "./AddWord.module.css";
+
+//functions
+import { sectionUpdate } from "../../redux/actions";
 
 const AddWord = () => {
   const dispatch = useDispatch();

@@ -1,11 +1,16 @@
+//functions
+import AddSection from "../AddSection/AddSection";
+import { deleteSeccion, getSections } from "../../redux/actions";
+
+//dependencies
+import { useEffect } from "react";
 import { Link } from "react-router-dom";
+import { useDispatch, useSelector } from "react-redux";
+import axios from "axios";
+
+//styles
 import styles from "./Sections.module.css";
 import { FaTrash } from "react-icons/fa";
-import { useDispatch, useSelector } from "react-redux";
-import AddSection from "../AddSection/AddSection";
-import { useEffect } from "react";
-import { deleteSeccion, getSections } from "../../redux/actions";
-import axios from "axios";
 
 const Sections = () => {
   const dispatch = useDispatch();
@@ -28,15 +33,13 @@ const Sections = () => {
 
   const getColorsCount = (sec) => {
     const colorsCount = sec.Words.reduce((acc, word) => {
-      const color = word.color || "gray"; // Si el color es null o undefined, se considera "gray"
+      const color = word.color || "gray";
       acc[color] = (acc[color] || 0) + 1;
       return acc;
     }, {});
 
     return colorsCount;
   };
-
-  console.log(section);
 
   return (
     <div className={styles.container}>
